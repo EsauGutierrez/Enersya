@@ -1,57 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENERSYA - Soluciones en Calidad de Energía</title>
-    <!-- Tailwind CSS CDN -->
+    <title>ENERSYA - Catálogo</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configuración de Colores Personalizados basados en el Logo -->
     <script src="js/tailwind-config.js"></script>
-    <!-- Google Fonts (Inter para un look moderno y técnico) -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    </head>
-<body>
+</head>
 
-    <!-- ================= HEADER / NAVBAR ================= -->
+<body class="bg-gray-50">
+
     <header class="bg-white shadow-sm fixed w-full z-50 transition-all duration-300" id="navbar">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo Placeholder (Simulado con texto/imagen si fallara la carga) -->
-            <div class="flex items-center">
-                <!-- Intentamos cargar el logo subido, si falla mostramos texto estilizado -->
-                <div class="flex items-center gap-2">
-                    <!-- Usando el nombre del archivo subido. Si no carga en el preview, se verá el alt text -->
-                    <img src="assets/images/LOGOTIPO-ENERSYA-V2.png"
-                        onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';"
-                        alt="ENERSYA Logo" class="h-12 md:h-16 w-auto object-contain">
-                    <span id="logo-text" style="display:none;"
-                        class="text-2xl font-bold text-enersya-blue tracking-tighter">ENERSYA</span>
-                </div>
+
+            <div class="flex items-center gap-2">
+                <img src="assets/images/LOGOTIPO-ENERSYA-V2.png"
+                    onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block';"
+                    alt="ENERSYA Logo" class="h-12 md:h-16 w-auto object-contain">
+                <span id="logo-text" style="display:none;"
+                    class="text-2xl font-bold text-blue-900 tracking-tighter">ENERSYA</span>
             </div>
 
-            <!-- Navegación Desktop -->
-            <nav class="hidden md:flex items-center space-x-8 font-semibold text-enersya-blue">
-                <a href="#servicios" class="hover:text-enersya-orange transition duration-300">Servicios</a>
-                <a href="#nosotros" class="hover:text-enersya-orange transition duration-300">Por qué ENERSYA</a>
-                <a href="#contacto" class="hover:text-enersya-orange transition duration-300">Contacto</a>
+            <nav class="hidden md:flex items-center space-x-8 font-semibold text-blue-900">
+                <a href="index.html" class="hover:text-orange-500 transition duration-300">Inicio</a>
+                <a href="catalogo.html" class="text-orange-500 transition duration-300">Catálogo</a>
+                <a href="index.html#contacto" class="hover:text-orange-500 transition duration-300">Contacto</a>
             </nav>
 
-            <!-- Botón CTA -->
             <div class="hidden md:block">
-                <a href="#contacto"
-                    class="bg-enersya-orange text-white font-bold px-6 py-3 rounded-md hover:bg-opacity-90 transition shadow-md flex items-center transform hover:-translate-y-0.5">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
+                <a href="index.html#contacto"
+                    class="bg-orange-500 text-white font-bold px-6 py-3 rounded-md hover:bg-opacity-90 transition shadow-md flex items-center">
                     Solicitar Cotización
                 </a>
             </div>
 
-            <!-- Menú Hamburguesa Móvil -->
-            <button class="md:hidden text-enersya-blue focus:outline-none"
+            <button class="md:hidden text-blue-900 focus:outline-none"
                 onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
@@ -59,55 +45,59 @@
                 </svg>
             </button>
         </div>
-        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg z-40">
             <div class="flex flex-col px-6 py-4 space-y-4">
-                <a href="#servicios" class="font-semibold text-enersya-blue hover:text-enersya-orange">Servicios</a>
-                <a href="#nosotros" class="font-semibold text-enersya-blue hover:text-enersya-orange">Nosotros</a>
-                <a href="#contacto" class="font-semibold text-enersya-orange">Contacto</a>
+                <a href="index.html" class="font-semibold text-blue-900">Inicio</a>
+                <a href="catalogo.html" class="font-semibold text-orange-500">Catálogo</a>
+                <a href="index.html#contacto" class="font-semibold text-blue-900">Contacto</a>
             </div>
         </div>
     </header>
 
-    <main>
-        <section class="catalog-header">
-            <div class="container">
-                <h1>Catálogo de Soluciones</h1>
-                <p>Encuentra los mejores equipos y refacciones para tu proyecto.</p>
+    <main class="pt-28 pb-12">
+
+        <section class="catalog-header mb-8 text-center">
+            <div class="container mx-auto px-6">
+                <h1 class="text-3xl md:text-4xl font-bold text-white-900 mb-2">Catálogo de Soluciones</h1>
+                <p class="text-white-600">Encuentra los mejores equipos y refacciones para tu proyecto.</p>
             </div>
         </section>
 
-        <div class="container catalog-layout">
-            
-            <aside class="catalog-sidebar">
-                <div class="filter-group">
-                    <h3>Categorías</h3>
-                    <ul>
-                        <li><a href="#" class="active">Todos</a></li>
-                        <li><a href="#">Paneles Solares</a></li>
-                        <li><a href="#">Inversores</a></li>
-                        <li><a href="#">Baterías</a></li>
-                        <li><a href="#">Estructuras</a></li>
+        <div class="container mx-auto px-6 flex flex-col md:flex-row gap-8">
+
+            <aside class="catalog-sidebar w-full md:w-1/4">
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 sticky top-32">
+                    <h3 class="text-lg font-bold text-blue-900 mb-4 border-b border-orange-500 pb-2 inline-block">
+                        Categorías</h3>
+
+                    <ul id="lista-filtros" class="space-y-2">
+                        <li><button onclick="filtrar('Todos')"
+                                class="w-full text-left text-orange-500 font-semibold hover:bg-gray-50 p-2 rounded transition">Todos</button>
+                        </li>
+                        <li><button onclick="filtrar('Paneles')"
+                                class="w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition">Paneles
+                                Solares</button></li>
+                        <li><button onclick="filtrar('Inversores')"
+                                class="w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition">Inversores</button>
+                        </li>
+                        <li><button onclick="filtrar('Baterías')"
+                                class="w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition">Baterías</button>
+                        </li>
+                        <li><button onclick="filtrar('Estructuras')"
+                                class="w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition">Estructuras</button>
+                        </li>
+                        <li><button onclick="filtrar('UPS')"
+                                class="w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition">Ups</button>    
+                        </li>
                     </ul>
                 </div>
             </aside>
 
-            <section class="product-grid">
-                
-                <article class="product-card">
-                    <div class="card-image">
-                        <span class="badge">Nuevo</span>
-                        <img src="ruta/producto1.jpg" alt="Producto 1">
-                    </div>
-                    <div class="card-content">
-                        <span class="category">Categoría</span>
-                        <h4>Nombre del Producto</h4>
-                        <p>Descripción breve del producto.</p>
-                        <a href="#" class="btn-card">Cotizar</a>
-                    </div>
-                </article>
+            <section class="w-full md:w-3/4">
+                <div id="contenedor-productos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                </div>
+            </section>
 
-                </section>
         </div>
     </main>
 
@@ -186,7 +176,9 @@
             </div>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+
+    <script src="js/catalogo.js"></script>
 
 </body>
+
 </html>
