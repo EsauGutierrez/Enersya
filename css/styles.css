@@ -1,4 +1,337 @@
 @import url('[https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap](https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap)');
+:root {
+    --enersya-blue: #0B2545;   /* Azul oscuro profundo */
+    --enersya-accent: #F57C00; /* Naranja/Dorado energético */
+    --bg-light: #F8F9FA;       /* Gris muy claro para fondos */
+}
+
+/* Sección Distribuidores */
+.distribuidores-section {
+    padding: 80px 20px;
+    background-color: var(--bg-light); 
+    text-align: center;
+    /* Línea superior decorativa con el color de acento */
+    border-top: 5px solid var(--enersya-accent); 
+}
+
+.distribuidores-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: var(--enersya-blue); /* Título en el azul corporativo */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Pequeña línea decorativa debajo del título */
+.distribuidores-section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--enersya-accent);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.logos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Más espacio para que respiren los logos */
+}
+
+.logo-item img {
+    max-width: 160px;
+    height: auto;
+    /* Logos en escala de grises y opacos para no distraer */
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover: Recupera color y hace un pequeño "pop" hacia arriba */
+.logo-item img:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: translateY(-5px) scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .distribuidores-section {
+        padding: 50px 15px;
+    }
+    .logos-grid {
+        gap: 30px;
+    }
+    .logo-item img {
+        max-width: 130px;
+    }
+}
+
+/* Contenedor del botón para centrarlo y darle espacio */
+.action-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Estilo del botón ENERSYA */
+.btn-enersya {
+    display: inline-block;
+    background-color: var(--enersya-accent); /* Color Naranja */
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 12px 35px;
+    border-radius: 30px; /* Bordes redondeados modernos */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(245, 124, 0, 0.3); /* Sombra suave naranja */
+    transition: all 0.3s ease;
+    border: 2px solid transparent; /* Para evitar saltos al hacer hover con borde */
+}
+
+/* Efecto Hover del botón */
+.btn-enersya:hover {
+    background-color: #fff;
+    color: var(--enersya-accent);
+    border-color: var(--enersya-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(245, 124, 0, 0.4);
+}
+
+/* Efecto Active (Click) */
+.btn-enersya:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(245, 124, 0, 0.3);
+}
+
+/* --- Header del Catálogo --- */
+.catalog-header {
+    background-color: var(--enersya-blue);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.catalog-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* --- Layout Principal (Sidebar + Grid) --- */
+.catalog-layout {
+    display: flex;
+    gap: 40px;
+    padding-bottom: 80px;
+    align-items: flex-start; /* Para que el sidebar no se estire */
+}
+
+/* --- Sidebar --- */
+.catalog-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.filter-group {
+    margin-bottom: 30px;
+}
+
+.filter-group h3 {
+    color: var(--enersya-blue);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--enersya-accent);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.filter-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-group li {
+    margin-bottom: 10px;
+}
+
+.filter-group a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s;
+    display: block;
+}
+
+.filter-group a:hover, 
+.filter-group a.active {
+    color: var(--enersya-accent);
+    font-weight: 600;
+}
+
+/* --- Grilla de Productos --- */
+.product-grid {
+    flex-grow: 1;
+    display: grid;
+    /* Crea columnas automáticas de mínimo 250px */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* --- Tarjeta de Producto --- */
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: var(--enersya-accent); /* Borde naranja sutil al hover */
+}
+
+.card-image {
+    height: 200px;
+    background-color: #f4f4f4;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+/* Etiqueta "Nuevo" */
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--enersya-accent);
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content .category {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.card-content h4 {
+    color: var(--enersya-blue);
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+}
+
+.card-content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Empuja el botón hacia abajo */
+}
+
+/* Botón pequeño dentro de la card */
+.btn-card {
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid var(--enersya-blue);
+    color: var(--enersya-blue);
+    padding: 8px 0;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-card:hover {
+    background-color: var(--enersya-blue);
+    color: #fff;
+}
+
+/* --- Responsive Móvil --- */
+@media (max-width: 768px) {
+    .catalog-layout {
+        flex-direction: column;
+    }
+    .catalog-sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* --- Estilos del Header / Navegación --- */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra suave abajo */
+    position: sticky; /* Se queda pegado arriba al bajar */
+    top: 0;
+    z-index: 1000; /* Asegura que esté encima de todo */
+}
+
+nav {
+    display: flex;       /* Magia para poner lado a lado logo y menú */
+    justify-content: space-between; /* Logo a un extremo, menú al otro */
+    align-items: center;
+    padding: 15px 5%;    /* Espacio interno */
+    max-width: 1200px;
+    margin: 0 auto;      /* Centrar el contenido */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--enersya-blue); /* Usa tu azul corporativo */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;    /* Quita los puntos de la lista */
+    display: flex;       /* Pone los items en fila */
+    gap: 30px;           /* Espacio entre botones */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none; /* Quita el subrayado azul feo */
+    color: #333;           /* Color de letra oscuro */
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+/* Efecto al pasar el mouse o estar activo */
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--enersya-accent); /* Se pone naranja */
+}
 
 body { 
     font-family: 'Inter', sans-serif; 
