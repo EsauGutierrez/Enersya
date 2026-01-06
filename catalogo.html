@@ -56,10 +56,27 @@
 
     <main class="pt-28 pb-12">
 
-        <section class="catalog-header mb-8 text-center">
-            <div class="container mx-auto px-6">
-                <h1 class="text-3xl md:text-4xl font-bold text-white-900 mb-2">Catálogo de Soluciones</h1>
-                <p class="text-white-600">Encuentra los mejores equipos y refacciones para tu proyecto.</p>
+        <section class="catalog-header mb-8">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 py-4">
+
+                <div class="flex-shrink-0">
+                    <img src="assets/images/Powersan_All.png" alt="Imagen Izquierda"
+                        class="w-32 md:w-48 h-auto object-contain rounded-lg shadow-sm">
+                </div>
+
+
+                <div class="text-center flex-1 px-4 md:order-none order-first">
+                    <h1 class="text-3xl md:text-4xl font-bold text-white-900 mb-2">Catálogo de Soluciones</h1>
+                    <p class="text-white-600 font-medium">Encuentra los mejores equipos y refacciones para tu proyecto.
+                    </p>
+                </div>
+
+
+                <div class="flex-shrink-0">
+                    <img src="assets/images/battery_All.png" alt="Imagen Derecha"
+                        class="w-32 md:w-48 h-auto object-contain rounded-lg shadow-sm">
+                </div>
+
             </div>
         </section>
 
@@ -87,7 +104,7 @@
                                 class="w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition">Estructuras</button>
                         </li>
                         <li><button onclick="filtrar('UPS')"
-                                class="w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition">Ups</button>    
+                                class="w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition">Ups</button>
                         </li>
                     </ul>
                 </div>
