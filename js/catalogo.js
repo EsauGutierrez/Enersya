@@ -73,9 +73,10 @@ function cargarProductos(filtro = 'Todos') {
                     <span class="text-xs text-gray-500 uppercase tracking-wide mb-1">${producto.categoria}</span>
                     <h4 class="text-lg font-bold text-blue-900 mb-2">${producto.nombre}</h4>
                     <p class="text-sm text-gray-600 mb-4 flex-grow">${producto.descripcion}</p>
-                    <button onclick="alert('Cotizar: ${producto.nombre}')" 
+                    
+                    <button onclick="cotizar('${producto.nombre}')" 
                         class="w-full border-2 border-blue-900 text-blue-900 font-semibold py-2 rounded hover:bg-blue-900 hover:text-white transition">
-                        Cotizar
+                        Cotizar por WhatsApp
                     </button>
                 </div>
             </article>
@@ -84,17 +85,22 @@ function cargarProductos(filtro = 'Todos') {
     });
 }
 
-// 3. Función que llama el HTML al hacer click
+// 3. Función de filtrado (llamada desde el HTML)
 function filtrar(categoria) {
     cargarProductos(categoria);
-    actualizarEstilosFiltro(categoria); // Opcional: Para resaltar el botón activo
 }
 
-// 4. (Opcional) Cambiar estilos del botón activo
-function actualizarEstilosFiltro(categoriaActiva) {
-    // Esto es solo visual para que el botón se quede naranja
-    // Requiere lógica extra de clases, pero lo básico funciona sin esto.
+// 4. NUEVA FUNCIÓN: Redirección a WhatsApp
+function cotizar(nombreProducto) {
+    const telefono = "523333912329"; // Tu número con lada internacional
+    const mensaje = `Hola ENERSYA, me interesa cotizar el producto: ${nombreProducto}. ¿Me podrían dar más información?`;
+    
+    // Creamos el link especial de WhatsApp
+    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    
+    // Abrimos en una pestaña nueva
+    window.open(url, '_blank');
 }
 
-// 5. Cargar todo al iniciar
+// 5. Inicializar
 document.addEventListener('DOMContentLoaded', () => cargarProductos('Todos'));
