@@ -117,6 +117,42 @@ const productos = [
         descripcion: "Aplicaciones: Centro de datos, Telecomunicaciones, Vehículos eléctricos, Sistemas de seguridad, Equipos médicos, UPS, Luminarias de emergencia.",
         nuevo: false
     },
+    {
+        id: 18,
+        nombre: "Eaton : 3S UPS 350/550/750 VA, 200/330/450 watts, 120V",
+        categoria: "UPS",
+        marca: "EATON",
+        imagen: "assets/images/eaton/Eaton-3S.jpg",
+        descripcion: "UPS de línea interactiva para protección básica de equipos electrónicos en oficinas y hogares.",
+        nuevo: false
+    },
+    {
+        id: 19,
+        nombre: "Eaton : 5S UPS 550 - 1500 VA, 330 - 900 watts, 120V",
+        categoria: "UPS",
+        marca: "EATON",
+        imagen: "assets/images/eaton/Eaton-5S.jpg",
+        descripcion: "UPS de línea interactiva para protección básica de equipos electrónicos en oficinas y hogares.",
+        nuevo: false
+    },
+    {
+        id: 20,
+        nombre: "Eaton : 5PX UPS 1000 - 3000 VA, 900 - 2700 watts, 120V",
+        categoria: "UPS",
+        marca: "EATON",
+        imagen: "assets/images/eaton/Eatons-5PX.jpg",
+        descripcion: "UPS de línea interactiva para protección básica de equipos electrónicos en oficinas y hogares.",
+        nuevo: false
+    },
+    {
+        id: 21,
+        nombre: "Eaton : 9SX UPS 700 - 3000 VA, 630 - 2700 watts, 120V, 208V",
+        categoria: "UPS",
+        marca: "EATON",
+        imagen: "assets/images/eaton/9SX3000_L.jpg",
+        descripcion: "UPS de línea interactiva para protección básica de equipos electrónicos en oficinas y hogares.",
+        nuevo: false
+    },
 ];
 
 // Estado de los filtros
