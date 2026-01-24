@@ -141,21 +141,53 @@
         <div class="container mx-auto px-6 flex flex-col md:flex-row gap-8">
 
             <aside class="catalog-sidebar w-full md:w-1/4">
-                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 sticky top-32">
-                    <h3 class="text-lg font-bold text-blue-900 mb-4 border-b border-orange-500 pb-2 inline-block">
-                        Categorías</h3>
+                <div
+                    class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 sticky top-32 max-h-[80vh] overflow-y-auto">
 
-                    <ul id="lista-filtros" class="space-y-2">
-                        <li><button onclick="filtrar('Todos')"
-                                class="w-full text-left text-orange-500 font-semibold hover:bg-gray-50 p-2 rounded transition">Todos</button>
-                        </li>
-                        <li><button onclick="filtrar('Baterías')"
-                                class="w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition">Baterías</button>
-                        </li>
-                        <li><button onclick="filtrar('UPS')"
-                                class="w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition">Ups</button>
-                        </li>
-                    </ul>
+                    <div class="mb-8">
+                        <h3 class="text-lg font-bold text-blue-900 mb-4 border-b border-orange-500 pb-2 inline-block">
+                            Categorías</h3>
+                        <ul class="space-y-2">
+                            <li><button onclick="filtrarCategoria('Todos')"
+                                    class="btn-cat w-full text-left text-orange-500 font-bold bg-orange-50 p-2 rounded transition"
+                                    data-val="Todos">Todos</button></li>
+                            <li><button onclick="filtrarCategoria('UPS')"
+                                    class="btn-cat w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
+                                    data-val="UPS">Sistemas UPS</button></li>
+                            <li><button onclick="filtrarCategoria('Baterías')"
+                                    class="btn-cat w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
+                                    data-val="Baterías">Baterías</button></li>
+                            <li><button onclick="filtrarCategoria('Bancos de Baterías')"
+                                    class="btn-cat w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
+                                    data-val="Bancos de Baterías">Bancos de Baterías</button></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-bold text-blue-900 mb-4 border-b border-orange-500 pb-2 inline-block">
+                            Marcas</h3>
+                        <ul class="space-y-2">
+                            <li><button onclick="filtrarMarca('Todas')"
+                                    class="btn-brand w-full text-left text-orange-500 font-bold bg-orange-50 p-2 rounded transition"
+                                    data-val="Todas">Todas</button></li>
+                            <li><button onclick="filtrarMarca('EATON')"
+                                    class="btn-brand w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
+                                    data-val="EATON">Eaton</button></li>
+                            <li><button onclick="filtrarMarca('KENJITSU')"
+                                    class="btn-brand w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
+                                    data-val="KENJITSU">Kenjitsu</button></li>
+                            <li><button onclick="filtrarMarca('OSONIX')"
+                                    class="btn-brand w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
+                                    data-val="OSONIX">Osonix</button></li>
+                            <li><button onclick="filtrarMarca('GENESIS')"
+                                    class="btn-brand w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
+                                    data-val="GENESIS">Genesis</button></li>
+                            <li><button onclick="filtrarMarca('DINASTY')"
+                                    class="btn-brand w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
+                                    data-val="DINASTY">Dinasty</button></li>
+                        </ul>
+                    </div>
+
                 </div>
             </aside>
 
@@ -243,6 +275,63 @@
         </div>
     </footer>
 
+    <div id="modal-detalle"
+        class="fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center z-[60] opacity-0 transition-opacity duration-300">
+
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 overflow-hidden transform scale-95 transition-transform duration-300 flex flex-col md:flex-row relative"
+            id="modal-content">
+
+            <button onclick="cerrarModal()"
+                class="absolute top-4 right-4 z-10 bg-gray-100 hover:bg-red-100 text-gray-500 hover:text-red-500 rounded-full p-2 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div class="w-full md:w-1/2 bg-gray-100 flex items-center justify-center p-6 relative group">
+                <img id="modal-img" src="" alt="Detalle"
+                    class="max-h-[400px] w-auto object-contain cursor-zoom-in transition-transform duration-300"
+                    onclick="toggleZoom(this)">
+
+                <div
+                    class="absolute bottom-4 right-4 bg-white px-3 py-1 rounded-full text-xs font-bold shadow text-gray-500 pointer-events-none opacity-0 group-hover:opacity-100 transition">
+                    Click para Zoom
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 p-8 flex flex-col overflow-y-auto max-h-[80vh]">
+                <span id="modal-categoria"
+                    class="text-orange-500 font-bold text-sm tracking-widest uppercase mb-2">Categoría</span>
+                <h2 id="modal-titulo" class="text-3xl font-bold text-blue-900 mb-4">Nombre del Producto</h2>
+
+                <div class="prose text-gray-600 mb-6 flex-grow">
+                    <p id="modal-descripcion">Descripción detallada del producto...</p>
+                    <div class="mt-4 bg-blue-50 p-4 rounded-lg border-l-4 border-blue-900">
+                        <h4 class="font-bold text-blue-900 text-sm mb-1">Especificaciones clave:</h4>
+                        <p id="modal-specs" class="text-sm">Consulte ficha técnica para más detalles.</p>
+                    </div>
+                </div>
+
+                <div class="mt-auto pt-6 border-t border-gray-100 flex gap-4">
+                    <button id="modal-cotizar" onclick=""
+                        class="flex-1 bg-blue-900 text-white font-bold py-3 rounded-lg hover:bg-orange-500 transition shadow-lg text-center">
+                        Solicitar Cotización
+                    </button>
+                    <button onclick="cerrarModal()"
+                        class="px-6 py-3 border border-gray-300 rounded-lg font-semibold text-gray-600 hover:bg-gray-50 transition">
+                        Cerrar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox-zoom" onclick="cerrarZoom()"
+        class="fixed inset-0 bg-black bg-opacity-95 hidden z-[70] flex items-center justify-center cursor-zoom-out">
+        <img id="lightbox-img" src=""
+            class="max-h-[90vh] max-w-[90vw] object-contain transition-transform duration-300 scale-100">
+    </div>
     <script src="js/catalogo.js"></script>
 
 </body>
