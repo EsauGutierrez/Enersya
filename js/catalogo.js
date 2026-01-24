@@ -4,7 +4,7 @@ const productos = [
         id: 1,
         nombre: "Batería Osonix OBS1285HR 12V, 85W/CELL 15 MIN",
         categoria: "Baterías",
-        imagen: "assets/images/osonix/baterias/_K6A4293.png", // Asegúrate de tener estas imágenes
+        imagen: "assets/images/osonix/baterias/K6A4293.png", // Asegúrate de tener estas imágenes
         descripcion: "Aplicaciones: UPS, Telecomunicaciones, Equipos Médicos, Sistemas de Seguridad, Equipos Industriales.",
         nuevo: true // Este tiene la etiqueta "Nuevo"
     },
