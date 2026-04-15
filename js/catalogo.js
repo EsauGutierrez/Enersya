@@ -221,6 +221,17 @@ function cargarProductos() {
 // 3. Funciones de Filtrado
 function filtrarCategoria(cat) {
     filtroCategoriaActual = cat;
+    filtroMarcaActual = 'Todas';
+
+    // Ocultar todos los submenus de marcas
+    document.querySelectorAll('.brand-submenu').forEach(ul => ul.classList.add('hidden'));
+
+    // Mostrar el submenu de la categoría seleccionada (si no es "Todos")
+    if (cat !== 'Todos') {
+        const submenu = document.querySelector(`.brand-submenu[data-cat="${cat}"]`);
+        if (submenu) submenu.classList.remove('hidden');
+    }
+
     cargarProductos();
 }
 
@@ -232,31 +243,24 @@ function filtrarMarca(marca) {
 function limpiarFiltros() {
     filtroCategoriaActual = 'Todos';
     filtroMarcaActual = 'Todas';
+    document.querySelectorAll('.brand-submenu').forEach(ul => ul.classList.add('hidden'));
     cargarProductos();
 }
 
 // 4. Actualizar visualmente qué botón está activo
 function actualizarEstilosBotones() {
-    // Estilos base vs activos
-    const baseClass = "text-gray-600 hover:text-orange-500 hover:bg-gray-50";
-    const activeClass = "text-orange-500 font-bold bg-orange-50";
+    const catBase = "btn-cat w-full text-left p-2 rounded transition text-gray-600 hover:text-orange-500 hover:bg-gray-50";
+    const catActive = "btn-cat w-full text-left p-2 rounded transition text-orange-500 font-bold bg-orange-50";
 
-    // Actualizar Categorías
+    const brandBase = "btn-brand w-full text-left p-1.5 rounded transition text-sm text-gray-500 hover:text-orange-500 hover:bg-gray-50";
+    const brandActive = "btn-brand w-full text-left p-1.5 rounded transition text-sm text-orange-500 font-bold bg-orange-50";
+
     document.querySelectorAll('.btn-cat').forEach(btn => {
-        if (btn.dataset.val === filtroCategoriaActual) {
-            btn.className = `btn-cat w-full text-left p-2 rounded transition ${activeClass}`;
-        } else {
-            btn.className = `btn-cat w-full text-left p-2 rounded transition ${baseClass}`;
-        }
+        btn.className = btn.dataset.val === filtroCategoriaActual ? catActive : catBase;
     });
 
-    // Actualizar Marcas
     document.querySelectorAll('.btn-brand').forEach(btn => {
-        if (btn.dataset.val === filtroMarcaActual) {
-            btn.className = `btn-brand w-full text-left p-2 rounded transition ${activeClass}`;
-        } else {
-            btn.className = `btn-brand w-full text-left p-2 rounded transition ${baseClass}`;
-        }
+        btn.className = btn.dataset.val === filtroMarcaActual ? brandActive : brandBase;
     });
 }
 

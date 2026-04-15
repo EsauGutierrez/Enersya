@@ -144,47 +144,57 @@
                 <div
                     class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 sticky top-32 max-h-[80vh] overflow-y-auto">
 
-                    <div class="mb-8">
-                        <h3 class="text-lg font-bold text-blue-900 mb-4 border-b border-orange-500 pb-2 inline-block">
-                            Categorías</h3>
-                        <ul class="space-y-2">
-                            <li><button onclick="filtrarCategoria('Todos')"
-                                    class="btn-cat w-full text-left text-orange-500 font-bold bg-orange-50 p-2 rounded transition"
-                                    data-val="Todos">Todos</button></li>
-                            <li><button onclick="filtrarCategoria('UPS')"
-                                    class="btn-cat w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
-                                    data-val="UPS">Sistemas UPS</button></li>
-                            <li><button onclick="filtrarCategoria('Baterías')"
-                                    class="btn-cat w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
-                                    data-val="Baterías">Baterías</button></li>
-                            <li><button onclick="filtrarCategoria('Bancos de Baterías')"
-                                    class="btn-cat w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
-                                    data-val="Bancos de Baterías">Bancos de Baterías</button></li>
-                        </ul>
-                    </div>
-
                     <div>
                         <h3 class="text-lg font-bold text-blue-900 mb-4 border-b border-orange-500 pb-2 inline-block">
-                            Marcas</h3>
-                        <ul class="space-y-2">
-                            <li><button onclick="filtrarMarca('Todas')"
-                                    class="btn-brand w-full text-left text-orange-500 font-bold bg-orange-50 p-2 rounded transition"
-                                    data-val="Todas">Todas</button></li>
-                            <li><button onclick="filtrarMarca('EATON')"
-                                    class="btn-brand w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
-                                    data-val="EATON">Eaton</button></li>
-                            <li><button onclick="filtrarMarca('KENJITSU')"
-                                    class="btn-brand w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
-                                    data-val="KENJITSU">Kenjitsu</button></li>
-                            <li><button onclick="filtrarMarca('OSONIX')"
-                                    class="btn-brand w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
-                                    data-val="OSONIX">Osonix</button></li>
-                            <li><button onclick="filtrarMarca('GENESIS')"
-                                    class="btn-brand w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
-                                    data-val="GENESIS">Genesis</button></li>
-                            <li><button onclick="filtrarMarca('DINASTY')"
-                                    class="btn-brand w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
-                                    data-val="DINASTY">Dinasty</button></li>
+                            Categorías</h3>
+                        <ul class="space-y-1">
+                            <li>
+                                <button onclick="filtrarCategoria('Todos')"
+                                    class="btn-cat w-full text-left text-orange-500 font-bold bg-orange-50 p-2 rounded transition"
+                                    data-val="Todos">Todos</button>
+                            </li>
+                            <li>
+                                <button onclick="filtrarCategoria('UPS')"
+                                    class="btn-cat w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
+                                    data-val="UPS">Sistemas UPS</button>
+                                <ul class="brand-submenu hidden ml-3 mt-1 space-y-1 border-l-2 border-orange-200 pl-3"
+                                    data-cat="UPS">
+                                    <li><button onclick="filtrarMarca('EATON')"
+                                            class="btn-brand w-full text-left text-gray-500 hover:text-orange-500 hover:bg-gray-50 p-1.5 rounded transition text-sm"
+                                            data-val="EATON">Eaton</button></li>
+                                    <li><button onclick="filtrarMarca('KENJITSU')"
+                                            class="btn-brand w-full text-left text-gray-500 hover:text-orange-500 hover:bg-gray-50 p-1.5 rounded transition text-sm"
+                                            data-val="KENJITSU">Kenjitsu</button></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button onclick="filtrarCategoria('Baterías')"
+                                    class="btn-cat w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
+                                    data-val="Baterías">Baterías</button>
+                                <ul class="brand-submenu hidden ml-3 mt-1 space-y-1 border-l-2 border-orange-200 pl-3"
+                                    data-cat="Baterías">
+                                    <li><button onclick="filtrarMarca('OSONIX')"
+                                            class="btn-brand w-full text-left text-gray-500 hover:text-orange-500 hover:bg-gray-50 p-1.5 rounded transition text-sm"
+                                            data-val="OSONIX">Osonix</button></li>
+                                    <li><button onclick="filtrarMarca('GENESIS')"
+                                            class="btn-brand w-full text-left text-gray-500 hover:text-orange-500 hover:bg-gray-50 p-1.5 rounded transition text-sm"
+                                            data-val="GENESIS">Genesis</button></li>
+                                    <li><button onclick="filtrarMarca('DINASTY')"
+                                            class="btn-brand w-full text-left text-gray-500 hover:text-orange-500 hover:bg-gray-50 p-1.5 rounded transition text-sm"
+                                            data-val="DINASTY">Dinasty</button></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <button onclick="filtrarCategoria('Bancos de Baterías')"
+                                    class="btn-cat w-full text-left text-gray-600 hover:text-orange-500 hover:bg-gray-50 p-2 rounded transition"
+                                    data-val="Bancos de Baterías">Bancos de Baterías</button>
+                                <ul class="brand-submenu hidden ml-3 mt-1 space-y-1 border-l-2 border-orange-200 pl-3"
+                                    data-cat="Bancos de Baterías">
+                                    <li><button onclick="filtrarMarca('OSONIX')"
+                                            class="btn-brand w-full text-left text-gray-500 hover:text-orange-500 hover:bg-gray-50 p-1.5 rounded transition text-sm"
+                                            data-val="OSONIX">Osonix</button></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
 

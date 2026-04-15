@@ -47,14 +47,12 @@
 .logo-item img {
     max-width: 160px;
     height: auto;
-    /* Logos en escala de grises y opacos para no distraer */
-    filter: grayscale(100%) opacity(0.6);
+    filter: grayscale(0%) opacity(1);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Hover: Recupera color y hace un pequeño "pop" hacia arriba */
+/* Hover: pequeño "pop" hacia arriba */
 .logo-item img:hover {
-    filter: grayscale(0%) opacity(1);
     transform: translateY(-5px) scale(1.05);
 }
 
