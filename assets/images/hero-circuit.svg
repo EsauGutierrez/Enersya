@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <style>
+      @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.8; } }
+      @keyframes float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(15px, -15px); } }
+      @keyframes glow { 0%, 100% { filter: drop-shadow(0 0 4px rgba(244, 157, 28, 0.4)); } 50% { filter: drop-shadow(0 0 12px rgba(244, 157, 28, 0.7)); } }
+      .pulse-line { animation: pulse 3s ease-in-out infinite; }
+      .glow-node { animation: glow 2.5s ease-in-out infinite; }
+      .float-element { animation: float 4s ease-in-out infinite; }
+    </style>
+    <linearGradient id="gradientOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F49D1C;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FFA726;stop-opacity:0.5" />
+    </linearGradient>
+    <linearGradient id="gradientBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#357ABD;stop-opacity:0.3" />
+    </linearGradient>
+    <filter id="shadowFilter">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Red de conexiones principal -->
+  <g stroke="rgba(244, 157, 28, 0.35)" stroke-width="2" fill="none" stroke-linecap="round">
+    <!-- Líneas principales horizontales -->
+    <path class="pulse-line" d="M 80 200 Q 250 180 400 220" />
+    <path class="pulse-line" d="M 400 220 Q 550 210 700 240" style="animation-delay: 0.3s;" />
+    <path class="pulse-line" d="M 700 240 Q 850 220 1000 280" style="animation-delay: 0.6s;" />
+    <path class="pulse-line" d="M 1000 280 Q 1100 300 1120 380" style="animation-delay: 0.9s;" />
+
+    <!-- Líneas de distribución media -->
+    <path class="pulse-line" d="M 150 400 Q 300 420 450 400" style="animation-delay: 0.5s;" />
+    <path class="pulse-line" d="M 450 400 Q 600 390 750 420" style="animation-delay: 0.7s;" />
+    <path class="pulse-line" d="M 750 420 Q 900 430 1050 400" style="animation-delay: 0.4s;" />
+
+    <!-- Líneas inferiores -->
+    <path class="pulse-line" d="M 100 550 Q 280 540 420 580" style="animation-delay: 0.2s;" />
+    <path class="pulse-line" d="M 420 580 Q 570 590 720 560" style="animation-delay: 0.8s;" />
+    <path class="pulse-line" d="M 720 560 Q 880 550 1000 600" style="animation-delay: 0.3s;" />
+    <path class="pulse-line" d="M 1000 600 Q 1100 610 1130 680" style="animation-delay: 0.6s;" />
+
+    <!-- Conexiones verticales -->
+    <path class="pulse-line" d="M 280 340 Q 300 370 310 410" style="animation-delay: 0.4s;" />
+    <path class="pulse-line" d="M 550 310 Q 570 355 580 400" style="animation-delay: 0.7s;" />
+    <path class="pulse-line" d="M 850 330 Q 870 375 880 420" style="animation-delay: 0.5s;" />
+    <path class="pulse-line" d="M 1000 340 Q 1015 370 1020 400" style="animation-delay: 0.2s;" />
+
+    <!-- Conexiones diagonales cruzadas -->
+    <path class="pulse-line" d="M 400 220 L 280 400" style="animation-delay: 0.3s;" />
+    <path class="pulse-line" d="M 700 240 L 550 400" style="animation-delay: 0.6s;" />
+    <path class="pulse-line" d="M 450 400 L 280 550" style="animation-delay: 0.4s;" />
+    <path class="pulse-line" d="M 750 420 L 600 580" style="animation-delay: 0.5s;" />
+  </g>
+
+  <!-- Nodos/puntos de conexión - Red superior -->
+  <g class="glow-node">
+    <circle cx="80" cy="200" r="8" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="80" cy="200" r="6" fill="rgba(244, 157, 28, 0.6)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.2s;">
+    <circle cx="280" cy="340" r="10" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="280" cy="340" r="8" fill="rgba(244, 157, 28, 0.7)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.4s;">
+    <circle cx="400" cy="220" r="12" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="400" cy="220" r="10" fill="rgba(244, 157, 28, 0.8)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.1s;">
+    <circle cx="550" cy="310" r="9" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="550" cy="310" r="7" fill="rgba(244, 157, 28, 0.6)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.3s;">
+    <circle cx="700" cy="240" r="11" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="700" cy="240" r="9" fill="rgba(244, 157, 28, 0.75)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.5s;">
+    <circle cx="850" cy="330" r="8" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="850" cy="330" r="6" fill="rgba(244, 157, 28, 0.65)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.2s;">
+    <circle cx="1000" cy="280" r="10" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="1000" cy="280" r="8" fill="rgba(244, 157, 28, 0.7)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.6s;">
+    <circle cx="1120" cy="380" r="7" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="1120" cy="380" r="5" fill="rgba(244, 157, 28, 0.6)" />
+  </g>
+
+  <!-- Nodos/puntos de conexión - Red media -->
+  <g class="glow-node" style="animation-delay: 0.35s;">
+    <circle cx="150" cy="400" r="9" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="150" cy="400" r="7" fill="rgba(244, 157, 28, 0.65)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.15s;">
+    <circle cx="310" cy="410" r="8" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="310" cy="410" r="6" fill="rgba(244, 157, 28, 0.6)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.45s;">
+    <circle cx="450" cy="400" r="11" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="450" cy="400" r="9" fill="rgba(244, 157, 28, 0.75)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.25s;">
+    <circle cx="580" cy="400" r="8" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="580" cy="400" r="6" fill="rgba(244, 157, 28, 0.65)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.55s;">
+    <circle cx="750" cy="420" r="10" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="750" cy="420" r="8" fill="rgba(244, 157, 28, 0.7)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.35s;">
+    <circle cx="880" cy="420" r="7" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="880" cy="420" r="5" fill="rgba(244, 157, 28, 0.6)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.1s;">
+    <circle cx="1050" cy="400" r="9" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="1050" cy="400" r="7" fill="rgba(244, 157, 28, 0.65)" />
+  </g>
+
+  <!-- Nodos/puntos de conexión - Red inferior -->
+  <g class="glow-node" style="animation-delay: 0.4s;">
+    <circle cx="100" cy="550" r="8" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="100" cy="550" r="6" fill="rgba(244, 157, 28, 0.6)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.2s;">
+    <circle cx="280" cy="540" r="9" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="280" cy="540" r="7" fill="rgba(244, 157, 28, 0.65)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.5s;">
+    <circle cx="420" cy="580" r="11" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="420" cy="580" r="9" fill="rgba(244, 157, 28, 0.75)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.3s;">
+    <circle cx="600" cy="580" r="8" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="600" cy="580" r="6" fill="rgba(244, 157, 28, 0.65)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.6s;">
+    <circle cx="720" cy="560" r="10" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="720" cy="560" r="8" fill="rgba(244, 157, 28, 0.7)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.25s;">
+    <circle cx="1000" cy="600" r="9" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="1000" cy="600" r="7" fill="rgba(244, 157, 28, 0.65)" />
+  </g>
+  <g class="glow-node" style="animation-delay: 0.55s;">
+    <circle cx="1130" cy="680" r="7" fill="url(#gradientOrange)" filter="url(#shadowFilter)" />
+    <circle cx="1130" cy="680" r="5" fill="rgba(244, 157, 28, 0.6)" />
+  </g>
+
+  <!-- Elementos decorativos flotantes - formas de energía -->
+  <g class="float-element" style="animation-delay: 0s;">
+    <circle cx="300" cy="250" r="35" fill="none" stroke="rgba(74, 144, 226, 0.2)" stroke-width="2" />
+    <circle cx="300" cy="250" r="22" fill="none" stroke="rgba(74, 144, 226, 0.15)" stroke-width="1" />
+  </g>
+  <g class="float-element" style="animation-delay: 1s;">
+    <circle cx="800" cy="350" r="40" fill="none" stroke="rgba(74, 144, 226, 0.2)" stroke-width="2" />
+    <circle cx="800" cy="350" r="24" fill="none" stroke="rgba(74, 144, 226, 0.15)" stroke-width="1" />
+  </g>
+  <g class="float-element" style="animation-delay: 2s;">
+    <circle cx="500" cy="650" r="30" fill="none" stroke="rgba(74, 144, 226, 0.2)" stroke-width="2" />
+    <circle cx="500" cy="650" r="18" fill="none" stroke="rgba(74, 144, 226, 0.15)" stroke-width="1" />
+  </g>
+
+  <!-- Líneas de energía brillantes (muy sutiles) -->
+  <g stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" fill="none" stroke-dasharray="5,5" opacity="0.4">
+    <path class="pulse-line" d="M 250 300 Q 350 280 450 320" style="animation-delay: 0.1s;" />
+    <path class="pulse-line" d="M 650 350 Q 750 330 850 380" style="animation-delay: 0.4s;" />
+    <path class="pulse-line" d="M 200 500 Q 350 480 450 520" style="animation-delay: 0.2s;" />
+  </g>
+
+  <!-- Símbolo de protección/escudo central sutil -->
+  <g transform="translate(600, 420)" opacity="0.15" class="float-element">
+    <path d="M 0 -40 L 35 -20 L 35 20 Q 0 50 -35 20 L -35 -20 Z"
+          fill="none" stroke="rgba(244, 157, 28, 0.4)" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M -10 0 L 0 10 L 10 0" fill="none" stroke="rgba(244, 157, 28, 0.3)" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Onda de energía sutil en la parte superior -->
+  <g stroke="rgba(244, 157, 28, 0.1)" stroke-width="1" fill="none" opacity="0.3">
+    <path d="M 0 80 Q 150 60 300 80 T 600 80 T 900 80 T 1200 80" />
+    <path d="M 0 120 Q 150 100 300 120 T 600 120 T 900 120 T 1200 120" />
+  </g>
+</svg>
