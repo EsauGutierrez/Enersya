@@ -153,6 +153,42 @@ const productos = [
         descripcion: "UPS de línea interactiva para protección básica de equipos electrónicos en oficinas y hogares.",
         nuevo: false
     },
+    {
+        id: 22,
+        nombre: "Eaton : 9PX UPS 700 - 3000 VA, 630 - 3000 watts, 120V, 208V y 120/208V",
+        categoria: "UPS",
+        marca: "EATON",
+        imagen: "assets/images/eaton/eaton-9PX.jpg",
+        descripcion: "UPS de línea interactiva para protección básica de equipos electrónicos en oficinas y hogares.",
+        nuevo: false
+    },
+    {
+        id: 23,
+        nombre: "Eaton : 9155 UPS 8-15 k VA, 13500 watts, 200-240V",
+        categoria: "UPS",
+        marca: "EATON",
+        imagen: "assets/images/eaton/eaton-9155.jpg",
+        descripcion: "UPS de línea interactiva para protección básica de equipos electrónicos en oficinas y hogares.",
+        nuevo: false
+    },
+    {
+        id: 24,
+        nombre: "Eaton : 9355 UPS 10 - 15k VA, 9 - 13.5k watts, 220 - 600V",
+        categoria: "UPS",
+        marca: "EATON",
+        imagen: "assets/images/eaton/eaton-9355.jpg",
+        descripcion: "UPS de línea interactiva para protección básica de equipos electrónicos en oficinas y hogares.",
+        nuevo: false
+    },
+    {
+        id: 25,
+        nombre: "Eaton : 93PM UPS 60-250 VA, 30-200 watts, 380V",
+        categoria: "UPS",
+        marca: "EATON",
+        imagen: "assets/images/eaton/Eatons-93PM.jpg",
+        descripcion: "UPS de línea interactiva para protección básica de equipos electrónicos en oficinas y hogares.",
+        nuevo: false
+    },
 ];
 
 // Estado de los filtros
