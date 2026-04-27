@@ -15,13 +15,14 @@ function enviarFormularioWhatsApp(event) {
 
     // 1. Obtener los valores del formulario
     const nombre = document.getElementById('nombre').value;
-    const empresa = document.getElementById('empresa').value || "Particular"; // Si no pone empresa, dice "Particular"
+    const empresa = document.getElementById('empresa').value || "Particular";
+    const email = document.getElementById('email').value;
     const telefono = document.getElementById('telefono').value;
     const interes = document.getElementById('interes').value;
     const mensaje = document.getElementById('mensaje').value;
 
     // 2. Tu número de teléfono (formato internacional sin +)
-    const miNumero = "523333912329"; 
+    const miNumero = "523333912329";
 
     // 3. Crear el mensaje formateado
     const textoMensaje = `
@@ -29,6 +30,7 @@ function enviarFormularioWhatsApp(event) {
 -----------------------------
 👤 *Nombre:* ${nombre}
 🏢 *Empresa:* ${empresa}
+📧 *Email:* ${email}
 📞 *Teléfono:* ${telefono}
 🔌 *Interés:* ${interes}
 -----------------------------
