@@ -134,39 +134,51 @@
 
     <!-- ================= HERO SECTION ================= -->
     <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 flex items-center min-h-[85vh] overflow-hidden">
-        <!-- Background with Circuit Illustration -->
+        <!-- Background -->
         <div class="absolute inset-0 z-0 bg-gradient-to-br from-enersya-blue via-blue-900 to-slate-900">
-            <img src="assets/images/hero-circuit.svg" alt="Red de circuitos energéticos"
-                class="w-full h-full object-cover opacity-60">
-            <div class="absolute inset-0 bg-enersya-blue bg-opacity-65 mix-blend-multiply"></div>
-            <!-- Decorative gradient overlay -->
-            <div class="absolute inset-0 bg-gradient-to-r from-enersya-blue via-transparent to-transparent opacity-90">
-            </div>
+            <!-- Accent glow right side -->
+            <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-enersya-orange opacity-5 rounded-full blur-3xl"></div>
+            <!-- Left gradient keeps text area dark -->
+            <div class="absolute inset-0 bg-gradient-to-r from-enersya-blue via-enersya-blue/70 to-transparent"></div>
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <div class="md:w-3/4 lg:w-2/3 animate-fade-in-up">
-                <div
-                    class="inline-flex items-center px-3 py-1 rounded-full bg-enersya-orange bg-opacity-20 border border-enersya-orange mb-6">
-                    <span class="w-2 h-2 rounded-full bg-enersya-orange mr-2 animate-pulse"></span>
-                    <span class="text-enersya-orange font-semibold text-sm uppercase tracking-wide">20 años de experiencia en sistemas de energía ininterrumpible</span>
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-4">
+                <!-- Text content -->
+                <div class="w-full md:w-1/2 animate-fade-in-up">
+                    <div
+                        class="inline-flex items-center px-3 py-1 rounded-full bg-enersya-orange bg-opacity-20 border border-enersya-orange mb-6">
+                        <span class="w-2 h-2 rounded-full bg-enersya-orange mr-2 animate-pulse"></span>
+                        <span class="text-enersya-orange font-semibold text-sm uppercase tracking-wide">20 años de
+                            experiencia en sistemas de energía ininterrumpible</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                        Energía Ininterrumpida <br />
+                        <span class="text-enersya-orange">y Calidad Certificada</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl">
+                        Aseguramos la continuidad operativa de tu empresa, respaldo de energía y mantenimiento crítico.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contacto"
+                            class="bg-enersya-orange text-white font-bold px-8 py-4 rounded-md hover:bg-white hover:text-enersya-orange transition duration-300 text-center shadow-lg transform hover:-translate-y-1">
+                            Cotizar Solución
+                        </a>
+                        <a href="#servicios"
+                            class="bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-md hover:bg-white hover:text-enersya-blue transition duration-300 text-center">
+                            Explorar Servicios
+                        </a>
+                    </div>
                 </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                    Energía Ininterrumpida <br />
-                    <span class="text-enersya-orange">y Calidad Certificada</span>
-                </h1>
-                <p class="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl">
-                    Aseguramos la continuidad operativa de tu empresa, respaldo de energía y mantenimiento crítico.
-                </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#contacto"
-                        class="bg-enersya-orange text-white font-bold px-8 py-4 rounded-md hover:bg-white hover:text-enersya-orange transition duration-300 text-center shadow-lg transform hover:-translate-y-1">
-                        Cotizar Solución
-                    </a>
-                    <a href="#servicios"
-                        class="bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-md hover:bg-white hover:text-enersya-blue transition duration-300 text-center">
-                        Explorar Servicios
-                    </a>
+
+                <!-- Product image -->
+                <div class="hidden md:flex md:w-1/2 items-center justify-end pr-4">
+                    <div class="relative w-full max-w-xl">
+                        <div class="absolute inset-0 bg-enersya-orange opacity-10 blur-3xl rounded-full scale-110"></div>
+                        <img src="assets/images/Powersan_All.png"
+                            alt="Soluciones UPS Kenjitsu — Enersya"
+                            class="relative w-full object-contain drop-shadow-2xl mix-blend-multiply">
+                    </div>
                 </div>
             </div>
         </div>
@@ -296,7 +308,7 @@
                 <div class="absolute -top-4 -left-4 w-24 h-24 bg-enersya-orange opacity-20 rounded-full blur-xl"></div>
                 <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-enersya-blue opacity-20 rounded-full blur-xl">
                 </div>
-                <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                <img src="https://images.unsplash.com/photo-1620714223084-8fcacc2dbed5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
                     alt="Técnico certificado realizando mantenimiento preventivo de UPS industrial"
                     class="rounded-lg shadow-2xl w-full h-auto object-cover relative z-10 border-8 border-white">
                 <!-- Tarjeta Flotante -->
@@ -753,7 +765,10 @@
                     <ul class="space-y-3 text-sm">
                         <li><a href="#servicios" class="hover:text-enersya-orange transition">Mantenimiento
                                 Preventivo</a></li>
-                        <li><a href="#servicios" class="hover:text-enersya-orange transition">Estudios de Calidad</a>
+                        <li><a href="#servicios" class="hover:text-enersya-orange transition">Mantenimiento
+                                correctivo</a>
+                        </li>
+                        <li><a href="#servicios" class="hover:text-enersya-orange transition">Cambio de baterías </a>
                         </li>
                         <li><a href="#contacto" class="hover:text-enersya-orange transition">Renta de Equipos</a></li>
                     </ul>
