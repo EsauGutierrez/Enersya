@@ -118,24 +118,6 @@ const productos = [
         nuevo: false
     },
     {
-        id: 18,
-        nombre: "Eaton : 3S UPS 350/550/750 VA, 200/330/450 watts, 120V",
-        categoria: "UPS",
-        marca: "EATON",
-        imagen: "assets/images/eaton/Eaton-3S.jpg",
-        descripcion: "UPS de línea interactiva para protección básica de equipos electrónicos en oficinas y hogares.",
-        nuevo: false
-    },
-    {
-        id: 19,
-        nombre: "Eaton : 5S UPS 550 - 1500 VA, 330 - 900 watts, 120V",
-        categoria: "UPS",
-        marca: "EATON",
-        imagen: "assets/images/eaton/Eaton-5S.jpg",
-        descripcion: "UPS de línea interactiva para protección básica de equipos electrónicos en oficinas y hogares.",
-        nuevo: false
-    },
-    {
         id: 20,
         nombre: "Eaton : 5PX UPS 1000 - 3000 VA, 900 - 2700 watts, 120V",
         categoria: "UPS",
